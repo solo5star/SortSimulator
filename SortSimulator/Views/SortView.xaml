@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="SortSimulator.Views.SortView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SortSimulator.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="300">
+    <DockPanel Background="Black" Margin="12">
+        <TextBlock Name="m_SortName" DockPanel.Dock="Top" Text="Sort" FontSize="30" Foreground="Gray" HorizontalAlignment="Center"/>
+        <Grid>
+            <Rectangle Fill="Transparent" Stroke="Gray" StrokeThickness="3"/>
+            <DockPanel Margin="3">
+                <TextBlock DockPanel.Dock="Top" Foreground="Gray" Margin="3">
+                    <TextBlock Text="Comparison: "/>
+                    <TextBlock Text="{Binding ComparisonCount}"/>
+                </TextBlock>
+                <Grid Name="m_SortGrid" Margin="8"/>
+            </DockPanel>
+        </Grid>
+    </DockPanel>
+</UserControl>

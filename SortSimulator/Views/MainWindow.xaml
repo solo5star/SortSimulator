@@ -1,0 +1,30 @@
+﻿<Window x:Class="SortSimulator.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Views="clr-namespace:SortSimulator.Views"
+        xmlns:ViewModels="clr-namespace:SortSimulator.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="460" Width="700">
+
+    <DockPanel>
+        <StackPanel HorizontalAlignment="Center" DockPanel.Dock="Bottom" Orientation="Horizontal" Background="White" Margin="3">
+            <Button Content="Add Sort" Click="Click_AddSort" Padding="3,0" Margin="3,0"/>
+
+            <Button Content="Array Settings" Click="Click_ArraySettings" Padding="3,0" Margin="3,0"/>
+
+            <TextBlock Text="Speed (per sec)" Padding="3,0" Margin="3,0"/>
+            <Slider Name="m_SpeedSlider" Value="10" Maximum="500" Minimum="1" Width="100" IsSnapToTickEnabled="True" TickFrequency="1"/>
+            <TextBox Name="m_Speed" Text="{Binding ElementName=m_SpeedSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" Width="30" HorizontalContentAlignment="Center"/>
+
+            <TextBlock Text="Sequence" Padding="3,0" Margin="3,0"/>
+            <Button Content="Next" Click="Click_Next" Padding="3,0" Margin="3,0"/>
+            <Button Name="m_StartStop" Click="Toggle_StartStop" Content="Start" Padding="3,0" Margin="3,0"/>
+            <Button Name="m_Reset" Click="Click_Reset" Content="Reset" Padding="3,0" Margin="3,0"/>
+        </StackPanel>
+
+        <Grid Name="m_Grid" Background="Black">
+        </Grid>
+    </DockPanel>
+</Window>

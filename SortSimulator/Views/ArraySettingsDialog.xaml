@@ -1,0 +1,31 @@
+﻿<Window x:Class="SortSimulator.Views.ArraySettingsDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SortSimulator.Views"
+        mc:Ignorable="d"
+        Title="Array Settings" Height="160" Width="260">
+    <DockPanel Margin="5">
+        <Grid DockPanel.Dock="Top" Margin="3">
+            <TextBlock Text="Array length" HorizontalAlignment="Left"/>
+            <TextBox Name="m_Length" Text="{Binding Path=Length}" Width="120" HorizontalAlignment="Right" HorizontalContentAlignment="Right"/>
+        </Grid>
+        <Grid DockPanel.Dock="Top" Margin="3">
+            <TextBlock Text="Array Status" HorizontalAlignment="Left"/>
+            <ComboBox Width="120" HorizontalAlignment="Right" HorizontalContentAlignment="Right"
+                      ItemsSource="{Binding ArrayTypeEntries}"
+                      SelectedValue="{Binding SelectedArrayTypeEntry}"/>
+        </Grid>
+        <DockPanel DockPanel.Dock="Bottom">
+            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="OK" Click="Click_OK" Padding="3" Margin="3,0"/>
+                <Button Content="Cancel" Click="Click_Cancel" Padding="3" Margin="3,0"/>
+            </StackPanel>
+            <TextBlock DockPanel.Dock="Left" Text="Warning! Current progress will reset" FontSize="8" VerticalAlignment="Bottom"/>
+        </DockPanel>
+        <Grid>
+            
+        </Grid>
+    </DockPanel>
+</Window>
